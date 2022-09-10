@@ -1,0 +1,22 @@
+# custom app config
+# overrides DCAPE/apps/drone/dcape-app/docker-compose.yml
+
+version: '2'
+
+services:
+  app:
+    environment:
+      - COMMENTO_POSTGRES=postgres://${PGUSER}:${PGPASSWORD}@db/${PGDATABASE}?sslmode=disable
+      - COMMENTO_ORIGIN=http://${APP_SITE}
+      - COMMENTO_PORT=8080
+      - COMMENTO_SMTP_HOST
+      - COMMENTO_SMTP_PORT
+      - COMMENTO_SMTP_USERNAME
+      - COMMENTO_SMTP_PASSWORD
+      - COMMENTO_SMTP_FROM_ADDRESS
+      - COMMENTO_GOOGLE_KEY
+      - COMMENTO_GOOGLE_SECRET
+      - COMMENTO_GITHUB_KEY
+      - COMMENTO_GITHUB_SECRET
+      - COMMENTO_GITLAB_KEY
+      - COMMENTO_GITLAB_SECRET
